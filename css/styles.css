@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    line-height: 1.5;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background: #1f4e78;
+    color: white;
+    padding: 25px 0;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin-bottom: 5px;
+}
+
+.panel {
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.panel h2 {
+    margin-bottom: 20px;
+}
+
+.campo {
+    margin-bottom: 16px;
+}
+
+.campo label,
+.busqueda label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: 3px solid #8ab4f8;
+    outline-offset: 2px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.acciones-formulario {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-primario {
+    background: #1f4e78;
+    color: white;
+}
+
+.btn-secundario {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-editar {
+    background: #e0a800;
+    color: #111;
+    margin-right: 5px;
+}
+
+.btn-eliminar {
+    background: #c82333;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.encabezado-listado {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.filtros {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.busqueda {
+    width: 250px;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #eef2f5;
+}
+
+#mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#estadoCarga {
+    margin-bottom: 12px;
+}
+
+.mensaje-exito {
+    color: #176b2c;
+}
+
+.mensaje-error {
+    color: #a6192e;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+
+    .contenedor {
+        width: 95%;
+    }
+
+    .encabezado-listado {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .busqueda {
+        width: 100%;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .acciones-formulario {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de gestión documental escolar">
+    <title>Gestor Documental | Escuela G-733</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="contenedor">
+        <h1>Gestor Documental</h1>
+        <p>Escuela Básica G-733 Chorombo Bajo</p>
+    </div>
+</header>
+
+<main class="contenedor">
+
+    <section class="panel" aria-labelledby="titulo-formulario">
+        <h2 id="titulo-formulario">Registrar documento</h2>
+
+        <form id="formDocumento">
+
+            <input type="hidden" id="documentoId">
+
+            <div class="campo">
+                <label for="titulo">Título *</label>
+                <input
+                    type="text"
+                    id="titulo"
+                    required
+                    placeholder="Ej: Citación reunión de apoderados"
+                >
+            </div>
+
+            <div class="campo">
+                <label for="tipoDocumento">Tipo de documento *</label>
+                <select id="tipoDocumento" required>
+                    <option value="">Seleccione un tipo</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="fecha">Fecha *</label>
+                <input type="date" id="fecha" required>
+            </div>
+
+            <div class="campo">
+                <label for="descripcion">Descripción</label>
+                <textarea
+                    id="descripcion"
+                    rows="3"
+                    placeholder="Descripción del documento"
+                ></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="archivo">Nombre o referencia del archivo</label>
+                <input
+                    type="text"
+                    id="archivo"
+                    placeholder="Ej: documento.pdf"
+                >
+            </div>
+
+            <div class="acciones-formulario">
+                <button type="submit" class="btn btn-primario">
+                    Guardar documento
+                </button>
+
+                <button
+                    type="button"
+                    id="btnCancelar"
+                    class="btn btn-secundario"
+                    hidden
+                >
+                    Cancelar edición
+                </button>
+            </div>
+
+        </form>
+
+        <p id="mensaje" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="titulo-documentos">
+
+        <div class="encabezado-listado">
+
+            <h2 id="titulo-documentos">Documentos registrados</h2>
+
+            <div class="filtros">
+
+                <div class="busqueda">
+                    <label for="buscar">Buscar documento</label>
+                    <input
+                        type="search"
+                        id="buscar"
+                        placeholder="Buscar por título..."
+                    >
+                </div>
+
+                <div class="busqueda">
+                    <label for="filtroTipo">Filtrar por tipo</label>
+                    <select id="filtroTipo">
+                        <option value="">Todos los tipos</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p id="estadoCarga" aria-live="polite"></p>
+
+        <div class="tabla-contenedor">
+            <table aria-label="Listado de documentos registrados">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Tipo</th>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
+                        <th>Archivo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaDocumentos"></tbody>
+            </table>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>Gestor Documental - Escuela Básica G-733 Chorombo Bajo</p>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
